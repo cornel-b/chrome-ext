@@ -1,7 +1,8 @@
 
 // display most visited websites
-chrome.topSites.get(function(sites){
+chrome.topSites.get(function(sites) {
+    sites = sites.slice(0, 10);
     sites.forEach(function(element) {
-        $("#most-visited").append('<li><a href="' + element.url + '"><span class="tab">' + element.title + '</span></a></li>');
+        $("#most-visited").append('<li><a href="' + element.url + '"><span class="tab"><img src="https://www.google.com/s2/favicons?domain=' + element.url + '" /></span></a></li>');
     }, this);
 });
