@@ -15,6 +15,7 @@
     "sessions",
     "topSites",
     "tabs",
+    "bookmarks",
     "https://ajax.googleapis.com/"
   ]
 }
