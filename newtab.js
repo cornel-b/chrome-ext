@@ -13,3 +13,11 @@ chrome.bookmarks.search('a', function(sites) {
         $("#bookmarks").append('<li><a href="' + element.url + '"><span class="tab"><img src="https://www.google.com/s2/favicons?domain=' + element.url + '" width="20" /></span></a></li>');
     }, this);
 });
+
+
+chrome.tabs.getAllInWindow(null, function(tabs) {
+    tabs.forEach(function(tab) {
+        $("#tab-list").append('<li><a href="' + tab.url + '"><span class="tab">' + tab.title + '</span></a></li>');
+    }, this);
+
+});

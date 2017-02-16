@@ -6,3 +6,6 @@ a { text-decoration: none}
 
 #bookmarks { position: absolute; right: 10px; }
 #bookmarks li { list-style:none; margin: 10px; }
+
+#tab-list { margin-top: 30px; }
+#tab-list li { line-height: 20px; }
