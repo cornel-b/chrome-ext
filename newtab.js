@@ -16,8 +16,14 @@ chrome.bookmarks.search('a', function(sites) {
 
 
 chrome.tabs.getAllInWindow(null, function(tabs) {
+
     tabs.forEach(function(tab) {
-        $("#tab-list").append('<li><a href="' + tab.url + '"><span class="tab">' + tab.title + '</span></a></li>');
+        $("#tab-list").append('<li><a href="' + tab.url + '"><span class="tab">' + tab.title + '</span></a> <span class="close-tab" data-id="' + tab.index + '">x</span></li>');
     }, this);
 
+});
+
+$(".close-tab").on('click', function() {
+    var tabId = $(this).data('id');
+    chrome.tabs.remove(tabId);
 });
