@@ -26,5 +26,6 @@ chrome.tabs.getAllInWindow(null, function(tabs) {
 
 $(document).on('click', '.close-tab', function() {
     var tabId = $(this).data('id');
+    $(this).parent().hide();
     chrome.tabs.remove(tabId);
 });
