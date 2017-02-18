@@ -10,4 +10,4 @@ a { text-decoration: none}
 #tab-list { margin-top: 30px; }
 #tab-list li { line-height: 20px; }
 
-.close-tab { cursor: pointer; }
+.close-tab, .switch-tab { cursor: pointer; }

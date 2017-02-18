@@ -20,12 +20,17 @@ chrome.bookmarks.search('a', function(sites) {
 // display tabs
 chrome.tabs.getAllInWindow(null, function(tabs) {
     tabs.forEach(function(tab) {
-        $("#tab-list").append('<li><a href="' + tab.url + '"><span class="tab">' + tab.title + '</span></a> <span class="close-tab" data-id="' + tab.id + '">x</span></li>');
+        $("#tab-list").append('<li data-id="' + tab.id + '"><span class="switch-tab">' + tab.title + '</span> <span class="close-tab">x</span></li>');
     }, this);
 });
 
 $(document).on('click', '.close-tab', function() {
-    var tabId = $(this).data('id');
+    var tabId = $(this).parent().data('id');
     $(this).parent().hide();
     chrome.tabs.remove(tabId);
+});
+
+$(document).on('click', '.switch-tab', function() {
+    var tabId = $(this).parent().data('id');
+    chrome.tabs.update(tabId, {active: true});
 });
