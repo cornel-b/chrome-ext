@@ -13,3 +13,17 @@ a { text-decoration: none}
 #tab-list li { line-height: 20px; }
 
 .close-tab, .switch-tab { cursor: pointer; }
+
+#current-time {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    height:100px;
+    margin-top: -150px;
+    margin-left: -180px;
+    background-color: #336688;
+    text-align:center;
+    font-size: 64px;
+    font-weight: bold;
+}
