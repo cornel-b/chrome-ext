@@ -1,12 +1,4 @@
 
-// display most visited websites
-chrome.topSites.get(function(sites) {
-    sites = sites.slice(0, 15);
-    sites.forEach(function(element) {
-        $("#most-visited").append('<li><a href="' + element.url + '"><span class="tab"><img src="https://www.google.com/s2/favicons?domain=' + element.url + '" width="20" /></span></a></li>');
-    }, this);
-});
-
 // display booksmarks
 chrome.bookmarks.search('a', function(sites) {
     sites = sites.slice(0, 15);
