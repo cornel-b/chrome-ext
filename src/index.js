@@ -8,8 +8,10 @@ import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
+console.log(chrome);
+
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <App chrome="chrome" />
   </Provider>
   , document.querySelector('.container'));
