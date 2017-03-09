@@ -15,13 +15,9 @@ class MostVisited extends React.Component {
   };
 
   render() {
-      /*return this.getSites(function(result) {
+      return this.getSites(function(result) {
           return result;
-      });*/
-
-      return (
-        <div>Most visited websites</div>
-      );
+      });
   }
 
 }
