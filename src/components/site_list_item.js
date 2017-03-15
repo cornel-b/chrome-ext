@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
-const SiteListItem = ({site}) => {
-  return <li><a href="{site.url}"><span class="tab"><img src="https://www.google.com/s2/favicons?domain={site.url}" width="20" /></span></a></li>
-}
+export class SiteListItem extends React.Component {
 
-export default SiteListItem;
+  render() {
+    return (
+      <li>
+        <a href={this.props.site.url}>
+          <span className="tab"><img src={"https://www.google.com/s2/favicons?domain=" + this.props.site.url} width="20" /></span>
+        </a>
+      </li>
+    );
+  }
+}

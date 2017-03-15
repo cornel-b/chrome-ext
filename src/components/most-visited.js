@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import SiteListItem from './site_list_item';
+import { SiteListItem } from './site_list_item';
 
-class MostVisited extends React.Component {
+export class MostVisited extends React.Component {
 
-  getSites(fn) {
-      const sites = this.props.sites.get(function(sites) {
-        var list = sites.map(function(site)  {
-          return <SiteListItem site={site} />
-        });
-        fn(list);
-      });
-
-      return sites;
-  };
-
-  render() {
-      return this.getSites(function(result) {
-          return result;
-      });
+  constructor(props) {
+    super(props);
+    this.state = { sites: [] };
   }
 
-}
+  componentDidMount() {
+    this.props.sites.get((sites) => {
+      this.setState({ sites: sites });
+    });
+  }
 
-export default MostVisited;
+  render() {
+    if (this.state.sites && this.state.sites.length > 0) {
+      return (
+        <ul>
+          {
+            this.state.sites.map(function (site) {
+              return <SiteListItem key={site.url} site={site} />;
+            })
+          }
+        </ul>
+      );
+    }
+
+    return <div>Loading...</div>;
+  }
+}
