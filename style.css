@@ -5,8 +5,8 @@ a { text-decoration: none; }
 .most-visited { position: absolute; bottom: 10px; left: 0; }
 .most-visited li {list-style: none; float:left; margin: 10px; }
 
-#bookmarks { position: absolute; right: 10px; }
-#bookmarks li { list-style:none; margin: 10px; }
+.bookmarks { position: absolute; right: 10px; }
+.bookmarks li { list-style:none; margin: 10px; }
 
 #tab-list { margin-top: 30px; }
 #tab-list li { line-height: 20px; }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SiteListItem } from './site_list_item';
 
-export class MostVisited extends React.Component {
+export class Bookmarks extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,18 +9,19 @@ export class MostVisited extends React.Component {
   }
 
   componentDidMount() {
-    this.props.sites.get((sites) => {
-      this.setState({ sites: sites });
+    this.props.sites.search('a', (sites) => {
+      this.setState({ sites: sites.slice(0, 10) });
     });
   }
 
   render() {
     if (this.state.sites && this.state.sites.length > 0) {
       return (
-        <ul className="most-visited">
+        <ul className="bookmarks">
           {
             this.state.sites.map(function (site) {
-              return <SiteListItem key={site.url} site={site} />;
+                let keyName = "bookmark_" + site.url
+              return <SiteListItem key={keyName} site={site} />;
             })
           }
         </ul>

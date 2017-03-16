@@ -1,11 +1,3 @@
-// display booksmarks
-chrome.bookmarks.search('a', function(sites) {
-    sites = sites.slice(0, 15);
-    var list = sites.map(function(site) {
-        return '<li><a href="' + site.url + '"><span class="tab"><img src="https://www.google.com/s2/favicons?domain=' + site.url + '" width="20" /></span></a></li>';
-    });
-    list.forEach(function(element) { $("#bookmarks").append(element) }, this);
-});
 
 // display tabs
 chrome.tabs.getAllInWindow(null, function(tabs) {
