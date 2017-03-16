@@ -17,7 +17,7 @@ export class MostVisited extends React.Component {
   render() {
     if (this.state.sites && this.state.sites.length > 0) {
       return (
-        <ul>
+        <ul className="most-visited">
           {
             this.state.sites.map(function (site) {
               return <SiteListItem key={site.url} site={site} />;
