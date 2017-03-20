@@ -17,14 +17,14 @@ export class Bookmarks extends React.Component {
   render() {
     if (this.state.sites && this.state.sites.length > 0) {
       return (
-        <ul className="bookmarks">
+          <ul className="bookmarks">
           {
             this.state.sites.map(function (site) {
                 let keyName = "bookmark_" + site.url
-              return <SiteListItem key={keyName} site={site} />;
+                return <SiteListItem key={keyName} site={site} />;
             })
           }
-        </ul>
+          </ul>
       );
     }
 
