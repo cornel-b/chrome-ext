@@ -6,7 +6,9 @@ export class SiteListItem extends React.Component {
     return (
       <li>
         <a href={this.props.site.url}>
-          <span className="tab"><img src={"https://www.google.com/s2/favicons?domain=" + this.props.site.url} width="20" /></span>
+          <span className="tab">
+              <img src={"https://www.google.com/s2/favicons?domain=" + this.props.site.url} width="20" />
+          </span>
         </a>
       </li>
     );
