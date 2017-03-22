@@ -4,11 +4,11 @@ export class TabItem extends React.Component {
 
   render() {
     return (
-      <li data-id={this.props.tab.id}>
-        <span class="switch-tab">
-          tab.title
+      <li data-id={this.props.site.id}>
+        <span className="switch-tab">
+          {this.props.site.title}
         </span>
-        <span class="close-tab">x</span>
+        <span className="close-tab">x</span>
       </li>
     );
   }

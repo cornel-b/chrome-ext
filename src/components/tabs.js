@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TabItem } from './tab_item';
 
-export class Bookmarks extends React.Component {
+export class Tabs extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,7 +9,7 @@ export class Bookmarks extends React.Component {
   }
 
   componentDidMount() {
-    this.props.sites.getAllInWindow(null, function(tabs) {
+    this.props.sites.getAllInWindow(null, (tabs) => {
         this.setState({ sites: tabs });
     });
   }
