@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { SiteListItem } from './site_list_item';
+import { TabItem } from './tab_item';
 
-export class MostVisited extends React.Component {
+export class Bookmarks extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,21 +9,22 @@ export class MostVisited extends React.Component {
   }
 
   componentDidMount() {
-    this.props.sites.get((sites) => {
-      this.setState({ sites });
+    this.props.sites.getAllInWindow(null, function(tabs) {
+        this.setState({ sites: tabs });
     });
   }
 
   render() {
     if (this.state.sites && this.state.sites.length > 0) {
       return (
-        <ul className="most-visited">
+          <ul className="tab-list">
           {
             this.state.sites.map(function (site) {
-              return <SiteListItem key={site.url} site={site} />;
+                let keyName = "bookmark_" + site.url
+                return <TabItem key={keyName} site={site} />;
             })
           }
-        </ul>
+          </ul>
       );
     }
 

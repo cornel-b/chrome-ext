@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MostVisited } from './most_visited';
 import { Bookmarks } from './bookmarks';
+import { Tabs } from './tabs';
 import { Timer } from './timer';
 
 export default class App extends Component {
@@ -10,6 +11,7 @@ export default class App extends Component {
       <div>
           <MostVisited sites={this.props.chrome.topSites} />
           <Bookmarks sites={this.props.chrome.bookmarks} />
+          <Tabs sites={this.props.chrome.tabs} />
           <Timer seconds="1500" />
       </div>
     );

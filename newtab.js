@@ -1,11 +1,4 @@
 
-// display tabs
-chrome.tabs.getAllInWindow(null, function(tabs) {
-    tabs.forEach(function(tab) {
-        $("#tab-list").append('<li data-id="' + tab.id + '"><span class="switch-tab">' + tab.title + '</span> <span class="close-tab">x</span></li>');
-    }, this);
-});
-
 $(document).on('click', '.close-tab', function() {
     var tabId = $(this).parent().data('id');
     $(this).parent().hide();
