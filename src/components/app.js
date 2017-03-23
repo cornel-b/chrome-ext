@@ -11,7 +11,7 @@ export default class App extends Component {
       <div>
           <MostVisited sites={this.props.chrome.topSites} />
           <Bookmarks sites={this.props.chrome.bookmarks} />
-          <Tabs sites={this.props.chrome.tabs} />
+          <Tabs chrome={this.props.chrome} sites={this.props.chrome.tabs} />
           <Timer seconds="1500" />
       </div>
     );
