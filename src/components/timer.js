@@ -11,7 +11,10 @@ export class Timer extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ time: this.state.seconds, seconds: this.props.seconds });
+        this.setState({ 
+            time: this.state.seconds, 
+            seconds: this.props.seconds 
+        });
     }
 
     startTimer() {
@@ -32,7 +35,6 @@ export class Timer extends React.Component {
             time: seconds,
             seconds: seconds,
         });
-
         if (seconds == 0) {
             clearInterval(this.timeLeft);
         }
@@ -41,7 +43,7 @@ export class Timer extends React.Component {
     render() {
         return (
             <div className="timer">
-                <button className="timerButton" onClick={this.startTimer}>Go</button>
+                <button className="timerButton" onClick={this.startTimer}>Start</button>
                 <div>{this.formatSeconds(this.state.time)}</div>
             </div>
         )
