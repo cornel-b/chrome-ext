@@ -1,13 +1,7 @@
-
 $(document).on('click', '.close-tab', function() {
     var tabId = $(this).parent().data('id');
     $(this).parent().hide();
     chrome.tabs.remove(tabId);
-});
-
-$(document).on('click', '.switch-tab', function() {
-    var tabId = $(this).parent().data('id');
-    chrome.tabs.update(tabId, {active: true});
 });
 
 // current time
