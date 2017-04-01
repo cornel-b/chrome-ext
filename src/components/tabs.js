@@ -9,8 +9,8 @@ export class Tabs extends React.Component {
     }
 
     componentDidMount() {
-        this.props.sites.getAllInWindow(null, (tabs) => {
-            this.setState({ sites: tabs });
+        chrome.tabs.getAllInWindow(null, (sites) => {
+            this.setState({ sites });
         });
     }
 
@@ -18,10 +18,10 @@ export class Tabs extends React.Component {
         if (this.state.sites && this.state.sites.length > 0) {
             return (
                 <ul className="tab-list">
-                    {
+                    { 
                         this.state.sites.map(function (site) {
                             let keyName = "bookmark_" + site.url
-                            return <TabItem chrome={this.props.chrome} key={keyName} site={site} />;
+                            return <TabItem key={keyName} site={site} />;
                         })
                     }
                 </ul>
