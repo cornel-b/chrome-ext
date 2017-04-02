@@ -18,9 +18,9 @@ export class Tabs extends React.Component {
         if (this.state.sites && this.state.sites.length > 0) {
             return (
                 <ul className="tab-list">
-                    { 
+                    {
                         this.state.sites.map(function (site) {
-                            let keyName = "bookmark_" + site.url
+                            let keyName = "bookmark_" + site.index;
                             return <TabItem key={keyName} site={site} />;
                         })
                     }

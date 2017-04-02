@@ -1,9 +1,3 @@
-$(document).on('click', '.close-tab', function() {
-    var tabId = $(this).parent().data('id');
-    $(this).parent().hide();
-    chrome.tabs.remove(tabId);
-});
-
 // current time
 function updateTime()
 {
