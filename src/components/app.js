@@ -3,6 +3,7 @@ import { MostVisited } from './most_visited';
 import { Bookmarks } from './bookmarks';
 import { Tabs } from './tabs';
 import { Timer } from './timer';
+import { CurrentTime } from './current_time';
 
 export default class App extends Component {
 
@@ -13,6 +14,7 @@ export default class App extends Component {
           <Bookmarks sites={this.props.chrome.bookmarks} />
           <Tabs chrome={this.props.chrome} sites={this.props.chrome.tabs} />
           <Timer seconds="1500" />
+          <CurrentTime />
       </div>
     );
   }
