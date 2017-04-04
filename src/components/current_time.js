@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+ 
 export class CurrentTime extends React.Component {
 
     constructor() {
@@ -8,11 +8,7 @@ export class CurrentTime extends React.Component {
     }
 
     componentDidMount() {
-        this.startTimer();
-    }
-
-    startTimer() {
-        setInterval(this.countDown, 1000);
+        setInterval(this.countDown.bind(this), 100);
     }
 
     countDown() {
