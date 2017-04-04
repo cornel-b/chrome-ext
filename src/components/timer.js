@@ -38,6 +38,8 @@ export class Timer extends React.Component {
         if (seconds == 0) {
             clearInterval(this.timeLeft);
         }
+
+        document.title = this.formatSeconds(this.state.time);
     }
 
     render() {
