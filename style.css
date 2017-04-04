@@ -42,6 +42,8 @@ a { text-decoration: none; }
 }
 
 .timerButton {
-    background-color: #ccc;
-    float:right;
+    background-color: #336699;
+    border: none;
+    color: '#ffffff';
+    float: right;
 }
