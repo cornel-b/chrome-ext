@@ -4,7 +4,6 @@ export class Timer extends React.Component {
 
     constructor() {
         super();
-
         this.state = { 
             time: 0, 
             seconds: 0,
@@ -48,14 +47,13 @@ export class Timer extends React.Component {
         if (seconds == 0) {
             clearInterval(this.timeLeft);
         }
-
         document.title = this.formatSeconds(this.state.time);
     }
 
     render() {
         return (
             <div className="timer">
-                <button className="timerButton" onClick={this.startTimer}>{ this.state.buttonTitle }</button>
+                <button className="timerButton" onClick={this.startTimer}>{this.state.buttonTitle}</button>
                 <div>{this.formatSeconds(this.state.time)}</div>
             </div>
         )
