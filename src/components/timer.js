@@ -9,26 +9,25 @@ export class Timer extends React.Component {
             seconds: 0,
             buttonTitle: 'Start'
         };
-        this.timeLeft = 0;
+        this.intervalId = 0;
         this.startTimer = this.startTimer.bind(this);
         this.countDown = this.countDown.bind(this);
     }
 
     componentDidMount() {
         this.setState({ 
-            time: this.state.seconds, 
             seconds: this.props.seconds 
         });
     }
 
     startTimer() {
-        if (this.timeLeft == 0) {
-            this.timeLeft = setInterval(this.countDown, 1000);
+        if (this.intervalId == 0) {
+            this.intervalId = setInterval(this.countDown, 1000);
             this.setState({'buttonTitle': 'Pause'});
         } else {
-            var res = clearInterval(this.timeLeft);
+            let res = clearInterval(this.intervalId);
             this.setState({'buttonTitle': 'Start'});
-            this.timeLeft = 0;
+            this.intervalId = 0;
         }
     }
 
