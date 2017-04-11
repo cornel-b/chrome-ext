@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- 
+
 export class CurrentTime extends React.Component {
 
     constructor() {
@@ -15,7 +15,7 @@ export class CurrentTime extends React.Component {
         let date = new Date();
         let hour = (date.getHours() < 10 ? '0' : '') + date.getHours();
         let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-        this.setState({timeString: hour + ':' + minute});
+        this.setState({ timeString: hour + ':' + minute });
     }
 
     render() {

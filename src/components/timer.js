@@ -4,8 +4,8 @@ export class Timer extends React.Component {
 
     constructor() {
         super();
-        this.state = { 
-            time: 0, 
+        this.state = {
+            time: 0,
             seconds: 0,
             buttonTitle: 'Start'
         };
@@ -15,18 +15,18 @@ export class Timer extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ 
-            seconds: this.props.seconds 
+        this.setState({
+            seconds: this.props.seconds
         });
     }
 
     startTimer() {
         if (this.intervalId == 0) {
             this.intervalId = setInterval(this.countDown, 1000);
-            this.setState({'buttonTitle': 'Pause'});
+            this.setState({ 'buttonTitle': 'Pause' });
         } else {
             let res = clearInterval(this.intervalId);
-            this.setState({'buttonTitle': 'Start'});
+            this.setState({ 'buttonTitle': 'Start' });
             this.intervalId = 0;
         }
     }

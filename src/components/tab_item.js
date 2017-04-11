@@ -4,16 +4,16 @@ export class TabItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {display: true};
+    this.state = { display: true };
   }
 
   makeTabActive(tabId) {
-    chrome.tabs.update(tabId, {active: true})
+    chrome.tabs.update(tabId, { active: true })
   }
 
   closeTab(tabId) {
     chrome.tabs.remove(tabId);
-    this.setState({display: false});
+    this.setState({ display: false });
   }
 
   render() {
