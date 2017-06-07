@@ -4,4 +4,3 @@
 - view most visited sites list
 - display clock
 - pomodoro timer
-- random background photo **todo**
