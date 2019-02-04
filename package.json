@@ -9,7 +9,7 @@
     "test:watch": "npm run test -- --watch",
     "build:js": "browserify src/index.js > bundle.js -t [ babelify --presets [ es2015 react ] ]"
   },
-  "author": "Cornel Bicuti",
+  "author": "Cornel",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
